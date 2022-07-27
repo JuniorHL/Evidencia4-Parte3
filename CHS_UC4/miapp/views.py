@@ -32,4 +32,20 @@ def integrantes(request):
         'alumnos' : alumnos 
         
         })
-    
+
+def crear_estudiante(request):
+    estudiante = estudiante(
+    codigo = "1913110530",
+    dni = "70930929",
+    nombre = "Anselmo",
+    apepat = "Huancas",
+    apemat = "Leuyacc",
+    direccion = "Mz A Lt 2 Las Torres",
+    telefono = "923996854",
+    estado = "A",
+    )
+    estudiante.save()
+    return HttpResponse (f"<h1>Estudiantes Registrados</h1>"+
+    f"<br> <b>Codigo:</b> {estudiante.codigo} <br> <b>DNI:</b> {estudiante.dni} <br> <b>Nombre:</b> {estudiante.nombre}"+
+    f"<br> <b>ApellidoPaterno:</b> {estudiante.apepat} <br> <b>ApellidoMaterno:</b> {estudiante.apemat} <br> <b>Direccion:</b> {estudiante.direccion}"+
+    f"<b>Telefono:</b> {estudiante.telefono} <br> <b>Estado:</b> {estudiante.estado}")
