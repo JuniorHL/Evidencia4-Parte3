@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+
 class Estudiante(models.Model):
     codigo = models.TextField(max_length=10)
     dni = models.TextField(max_length=8)

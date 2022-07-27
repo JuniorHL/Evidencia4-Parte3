@@ -2,7 +2,7 @@ from ast import Return
 import xdrlib
 from django.shortcuts import render,HttpResponse
 from requests import request
-
+from miapp.models import Estudiante
 
 # Create your views here.
 
@@ -34,18 +34,19 @@ def integrantes(request):
         })
 
 def crear_estudiante(request):
-    estudiante = estudiante(
-    codigo = "1913110530",
-    dni = "70930929",
-    nombre = "Anselmo",
-    apepat = "Huancas",
-    apemat = "Leuyacc",
-    direccion = "Mz A Lt 2 Las Torres",
-    telefono = "923996854",
+    estudiante = Estudiante(
+    codigo = "2013100093",
+    dni = "7058514",
+    nombre = "Luis",
+    apepat = "Serna",
+    apemat = "Malca",
+    direccion = "Mz 162 H lote 6 -Los Angeles",
+    telefono = "943251849",
     estado = "A",
     )
     estudiante.save()
     return HttpResponse (f"<h1>Estudiantes Registrados</h1>"+
     f"<br> <b>Codigo:</b> {estudiante.codigo} <br> <b>DNI:</b> {estudiante.dni} <br> <b>Nombre:</b> {estudiante.nombre}"+
     f"<br> <b>ApellidoPaterno:</b> {estudiante.apepat} <br> <b>ApellidoMaterno:</b> {estudiante.apemat} <br> <b>Direccion:</b> {estudiante.direccion}"+
-    f"<b>Telefono:</b> {estudiante.telefono} <br> <b>Estado:</b> {estudiante.estado}")
+    f"<br> <b>Telefono:</b> {estudiante.telefono} <br> <b>Estado:</b> {estudiante.estado}")
+    
