@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %} 
+
+
+<h1>INTEGRANTES</h1>
+<ul>
+    {%for alumno in alumnos%}
+    
+        <li>{{alumno}}</li>
+    
+    {%endfor%}
+</ul>
+
+{% endblock %}
